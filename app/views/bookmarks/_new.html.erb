@@ -2,13 +2,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Ajoutez un film à votre liste <%= @list.name %></h5>
+                <h5 class="modal-title">Ajouter un film à votre liste <%= @list.name %></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <%= simple_form_for [@list, @bookmark] do |f| %>
-                <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Selectionnez un film", input_html: { data: { controller: "slect2" } } %>
-                <%= f.input :comment,:label => "Commentaire", placeholder: "Entrez un commentaire sur le film" %>
+                <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Selectionner un film", input_html: { data: { controller: "slect2" } } %>
+                <%= f.input :comment,:label => "Commentaire", placeholder: "Entrer un commentaire sur le film" %>
             </div>
             <div class="modal-footer">
                 <%= f.submit "Ajouter un film", class: "btn btn-flat" %>
