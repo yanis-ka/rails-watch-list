@@ -10,11 +10,11 @@ class ListsController < ApplicationController
     end
 
     def new
-        @list = Restaurant.new # needed to instantiate the form_for
+        @list = List.new
     end
   
     def create
-        @list = Restaurant.new(list_params)
+        @list = List.new(list_params)
         if @list.save
             redirect_to list_path(@list)
         else
